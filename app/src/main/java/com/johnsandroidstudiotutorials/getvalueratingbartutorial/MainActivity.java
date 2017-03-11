@@ -9,27 +9,19 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Float ratingValue;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RatingBar ratingRatingBar = (RatingBar) findViewById(R.id.rating_rating_bar);
+        final RatingBar ratingRatingBar = (RatingBar) findViewById(R.id.rating_rating_bar);
         Button submitButton = (Button) findViewById(R.id.submit_button);
         final TextView ratingDisplayTextView = (TextView) findViewById(R.id.rating_display_text_View);
 
-        ratingRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                ratingValue = rating;
-            }
-        });
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ratingDisplayTextView.setText(ratingValue.toString());
+                ratingDisplayTextView.setText("Your rating is: " + ratingRatingBar.getRating());
             }
         });
     }
