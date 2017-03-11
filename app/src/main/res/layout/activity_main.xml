@@ -11,14 +11,14 @@
     tools:context="com.johnsandroidstudiotutorials.getvalueratingbartutorial.MainActivity">
 
     <RatingBar
+        android:id="@+id/rating_rating_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="101dp"
         android:numStars="5"
-        android:stepSize="1"
-        android:id="@+id/rating_rating_bar" />
+        android:stepSize=".5" />
 
     <Button
         android:text="Submit"
